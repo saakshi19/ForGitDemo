@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Calculate Here</title>
+</head>
+<body>
+
+<form actions = "calculator" method = "get">
+Number 1 <input name=n1> <br>
+Number 2 <input name =n2><br>
+
+<input name= op value ="+">
+<input name= op value ="*">
+<input name= op value ="/">
+<input name= op value ="-">
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IHome Page Here</title>
+</head>
+<body bgcolor = "pink">
+
+<h2>Welcome to my Web App</h2>
+
+<a href= /mywebapp/hello>Hello World</a>
+<br>
+<a href = hello>Hello agaiiin</a>
+<br>
+<a href = calci.html>Calculator</a>
+<br>
+</body>
+</html>

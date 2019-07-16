@@ -1,0 +1,28 @@
+package com.visa.training.app;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class SetApp {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		Set<String> words = new HashSet<>();
+		while(true) {
+			System.out.println("Enter a word");
+			String word;
+			word = sc.next();
+			if(!words.add(word)) {
+				System.out.println("Duplicate word");
+			}
+			if(words.size()==10) {
+				break;
+			}
+		}
+		System.out.println("Words are: ");
+		for(String word: words) {
+			System.out.println(word);
+		}
+	}
+	
+}

@@ -1,0 +1,16 @@
+package com.visa.training.app;
+import java.util.*;
+import java.io.*;
+
+public class LambdaApp {
+	public static void main(String args[]) {
+		String words[]= {"Hi","Hello","Bye","Good"};
+		System.out.println("Lambda");
+		Arrays.sort(words,(String s1,String s2)->{return s1.length()-s2.length();});
+		System.out.println(words);
+		
+		
+		
+	}
+
+}

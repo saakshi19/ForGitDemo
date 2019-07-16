@@ -1,0 +1,50 @@
+package com.visa.training.threads;
+
+class RunnablePrimeSearch implements Runnable{
+
+	long start,end;
+	int count;
+	
+	public RunnablePrimeSearch(long start,long end){
+		this.start=start;
+		this.end=end;
+	}
+	
+	private boolean isPrime(long i) {
+		if(i<2) {
+			return true;
+		}
+		for(long j =2;j<i;j++) {
+			if(i%j==0)
+				return false;
+		}
+		return true;
+	}
+	@Override
+	public void run() {
+		for(long i = start;i <= end; i++) {
+			if(isPrime(i)) {
+				count++;
+			}
+		}
+	}
+
+}
+
+public class PrimeSearchApp{
+	public static void main(String[] args) throws InterruptedException {
+		RunnablePrimeSearch v1= new RunnablePrimeSearch(1,10000);
+		RunnablePrimeSearch v2= new RunnablePrimeSearch(10000,25000);
+		
+		//ooooold style
+		Thread t1= new Thread(v1);
+		Thread t2= new Thread(v2);
+		t1.start();
+		t2.start();
+		
+		t1.join();
+		t2.join();
+		System.out.println("Primes b/w 1 and 10000"+v1.count);
+		System.out.println("Primes b/w 10000 and 25000"+v2.count);
+	}
+}

@@ -1,0 +1,13 @@
+package com.visa.training.jdbc;
+
+public class ProductApp {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ProductDAO dao = new ProductDAO();
+		Product prod = new Product(5,"vew",4.0,10);
+		dao.save(prod);
+
+	}
+
+}

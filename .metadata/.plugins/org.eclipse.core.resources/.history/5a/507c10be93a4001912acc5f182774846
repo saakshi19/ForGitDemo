@@ -1,0 +1,10 @@
+package com.visa.training.threads;
+
+public class RunnablePrimeSearch {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

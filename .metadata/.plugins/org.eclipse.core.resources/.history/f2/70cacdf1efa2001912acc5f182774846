@@ -1,0 +1,68 @@
+package com.visa.training.app;
+import java.io.*;
+import java.util.Random;
+
+
+public class StackApp {
+	
+	public static void main(String args[]) {
+		FixedArrayStack f = new FixedArrayStack(5);
+		StackUser s = new StackUser();
+		s.fill(f);
+		s.empty(f);
+		
+	}
+}
+
+interface Stack{
+	public void push(Object element);
+	public Object pop();
+}
+
+class StackUser{
+	FixedArrayStack f= new FixedArrayStack(10);
+	public void fill(Stack s) {
+		Random r=new Random();
+		
+		for(int i=0;i<10;i++) {
+			Integer o=new Integer(r.nextInt(10)+1);
+			f.push(o);
+		}
+		
+	}
+	public void empty(Stack s) {
+		for(int i=0;i<10;i++) {
+			Integer o = (Integer)f.pop();
+		}
+	}
+}
+
+class FixedArrayStack implements Stack{
+	Object a[];
+	int top;
+	int size;
+	
+	FixedArrayStack(int size){
+		this.size=size;
+		a=new Object[this.size];
+		top=-1;
+	}
+	
+	public void push(Object o) {
+		++top;
+		a[top]=o;
+		if(top==this.size) {
+			System.out.println("Stack is full");
+		}
+		else {
+			System.out.println("Pushed!");
+		}
+		
+	}
+	
+	public Object pop() {
+		Object popped = a[top];
+		top--;
+		return popped;
+	}
+}

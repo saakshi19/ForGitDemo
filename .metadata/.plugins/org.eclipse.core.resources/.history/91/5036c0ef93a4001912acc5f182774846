@@ -1,0 +1,32 @@
+package com.visa.training.threads;
+
+public class RunnablePrimeSearch implements Runnable{
+
+	long start,end;
+	int count;
+	
+	public RunnablePrimeSearch(long start,long end){
+		this.start=start;
+		this.end=end;
+	}
+	
+	private boolean isPrime(long i) {
+		if(i<2) {
+			return true;
+		}
+		for(long j =2;j<i;j++) {
+			if(i%j==0)
+				return false;
+		}
+		return true;
+	}
+	@Override
+	public void run() {
+		for(long i = start;i <= end; i++) {
+			if(isPrime(i)) {
+				count++;
+			}
+		}
+	}
+
+}

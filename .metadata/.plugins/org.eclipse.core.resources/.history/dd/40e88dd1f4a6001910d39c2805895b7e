@@ -1,0 +1,15 @@
+package com.visa.training.jdbc;
+
+import java.sql.SQLException;
+
+public class ProductApp {
+
+	public static void main(String[] args) throws SQLException {
+		// TODO Auto-generated method stub
+		ProductDAO dao = new ProductDAO();
+		Product prod = new Product(5,"vew",4.0f,10);
+		int generatedId = dao.save(prod);
+
+	}
+
+}

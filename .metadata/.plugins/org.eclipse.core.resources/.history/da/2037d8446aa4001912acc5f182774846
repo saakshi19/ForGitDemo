@@ -1,0 +1,17 @@
+package com.visa.training.app;
+import java.io.*;
+import java.util.*;
+
+
+public class StreamsApp {
+	public static void main(String args[]) {
+		
+		//adding two spaces in front of a words WITHOUT map
+		List<String> words = Arrays.asList("hi","hello","Bye","Goodbye");
+		words.stream().forEach(s-> s= "  "+s);
+		words.forEach(s->System.out.println(s));
+		
+		//using method reference 
+		words.stream().map(s->"_"+s).forEach(System.out::println);
+	}
+}

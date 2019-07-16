@@ -1,0 +1,46 @@
+package com.visa.training.app;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Random;
+
+class Circle {
+	double radius;
+	Circle(double radius){
+		this.radius=radius;
+	}
+	Circle(){}
+	String getShapeName() {
+		return "Circle";
+	}
+	double computeArea(Object o) {
+		Circle c = (Circle)o;
+		return (3.14*c.radius*c.radius);
+	}
+}
+
+public class CircleApp{
+	public static void main(String args[])
+	{
+		ArrayList<Circle> al = new ArrayList();
+		Random random = new Random();
+		int i=0;
+		double r = random.nextDouble();
+		while(r>=0.01)
+		{
+			r = random.nextDouble();
+			al.add(new Circle(r));
+		}
+		Circle c = new Circle();
+		System.out.println("Number of elements: "+al.size());
+		Iterator it = al.iterator();
+		while(it.hasNext()) {
+			System.out.println("Element: "+ c.computeArea(it.next()));
+		}
+		/*
+		 * Circle c[]=new Circle[3]; 
+		 * for(int i=0;i<3;i++) { c[i]=new Circle(1);
+		 * System.out.println(c[i].computeArea()); }
+		 */
+	}
+}

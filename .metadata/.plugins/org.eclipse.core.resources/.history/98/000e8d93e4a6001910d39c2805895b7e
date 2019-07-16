@@ -1,0 +1,39 @@
+package com.visa.training.jdbc;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+//DAO class has CRUD + Query Methods()
+public class ProductDAO {
+	
+	public void save(Product toBeSaved) throws SQLException {
+		
+		Connection c = JdbcUtil.getConnection();
+		Statement smt = c.createStatement();
+		smt.executeUpdate("INSERT into product Values(1,'ABC',10.0,50)");
+		System.out.println("Product details inserted" );
+	}
+	/*
+	public Product findById(int id) {
+		//read basic on ID
+		Connection c = JdbcUtil.getConnection();
+	}
+	
+	public List<Public> findAll(){
+		Connection c = JdbcUtil.getConnection();
+		
+	}
+	public void remove(int id) {
+		//remove/delete 
+		Connection c = JdbcUtil.getConnection();
+		
+	}
+	public void update(Product updated) {
+		//update 
+		Connection c = JdbcUtil.getConnection();
+		
+	}
+	*/
+}

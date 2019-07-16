@@ -1,0 +1,58 @@
+package com.visa.training.jdbc;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+//DAO class has CRUD + Query Methods()
+public class ProductDAO {
+	public static void main(String[] args) throws SQLException {
+		ProductDAO pdao = new ProductDAO();
+		Product prod = new Product();
+		pdao.save(prod);
+		pdao.findById(1);
+	}
+	
+	public void save(Product toBeSaved) throws SQLException {
+		
+		Connection c = JdbcUtil.getConnection();
+		PreparedStatement smt = c.prepareStatement("INSERT into product Values("+toBeSaved.getId()+",'"+toBeSaved.getName()+"',"+toBeSaved.getPrice()+","+toBeSaved.getQoh()+")");
+		smt.setInt(1,toBeSaved.id);
+		smt.setString(2,toBeSaved.name);
+		smt.setFloat(3,toBeSaved.price);
+		smt.setInt(4,toBeSaved.qoh);
+		
+		System.out.println("Product details inserted" );
+		c.close();//can also throw an exception
+	}
+	
+	public Product findById(int id) throws SQLException {
+		//read basic on ID
+		Connection c = JdbcUtil.getConnection();
+		Statement smt = c.createStatement();
+		ResultSet r = smt.executeQuery("SELECT * from product");
+		System.out.println(r);
+		return (Product) r;
+		
+		
+	}
+	/*
+	public List<Public> findAll(){
+		Connection c = JdbcUtil.getConnection();
+		
+	}
+	public void remove(int id) {
+		//remove/delete 
+		Connection c = JdbcUtil.getConnection();
+		
+	}
+	public void update(Product updated) {
+		//update 
+		Connection c = JdbcUtil.getConnection();
+		
+	}
+	*/
+}

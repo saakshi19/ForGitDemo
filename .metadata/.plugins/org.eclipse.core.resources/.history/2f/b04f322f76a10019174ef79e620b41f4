@@ -1,0 +1,26 @@
+import java.io.*;
+
+class Circle {
+	int radius;
+	Circle(int radius){
+		this.radius=radius;
+	}
+	String getShapeName() {
+		return "Circle";
+	}
+	double computeArea() {
+		return (3.14*this.radius*this.radius);
+	}
+}
+
+class CircleApp{
+	public static void main(String args[])
+	{
+		Circle c[]=new Circle[3];
+		for(int i=0;i<3;i++)
+		{
+			c[i]=new Circle(1);
+			System.out.println(c[i].computeArea());
+		}
+	}
+}

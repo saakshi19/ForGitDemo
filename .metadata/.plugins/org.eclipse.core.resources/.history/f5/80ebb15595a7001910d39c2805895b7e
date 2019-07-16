@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Product Details</title>
+</head>
+<body>
+<form action = "product" method="get"> 
+ID <input name=id> <br>
+Name <input name =name><br>
+Price <input name =price><br>
+QOH <input name =qoh><br>
+
+<input type = submit>
+
+
+</form>
+</body>
+</html>
