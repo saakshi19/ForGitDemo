@@ -86,3 +86,5 @@
 127.0.0.1 - - [16/Jul/2019:11:53:12 +0000] "GET /mywebapp/addBooks?books=Book+1&books=Book+2&books=Book+3 HTTP/1.1" 200 502
 127.0.0.1 - - [16/Jul/2019:11:53:15 +0000] "GET /mywebapp/addCars?cars=car+1&cars=car+2&cars=car+3 HTTP/1.1" 200 519
 127.0.0.1 - - [16/Jul/2019:11:53:17 +0000] "GET /mywebapp/addBikes?bikes=bike+1&bikes=bike+2 HTTP/1.1" 200 256
+191.8.28.124 - - [16/Jul/2019:11:55:20 +0000] "GET / HTTP/1.1" 404 1074
+191.8.28.124 - - [16/Jul/2019:11:55:20 +0000] "GET / HTTP/1.1" 404 1074

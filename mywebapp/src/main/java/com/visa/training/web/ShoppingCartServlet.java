@@ -32,9 +32,13 @@ public class ShoppingCartServlet extends HttpServlet {
 		}
 		else if(url.endsWith("addBikes")) {
 			String [] selectedBikes= request.getParameterValues("bikes");
+			session.setAttribute("selectedBikes",selectedBikes);
 			String [] selectedBooks = (String[]) session.getAttribute("selectedBooks");
 			String [] selectedCars = (String[]) session.getAttribute("selectedCars");
-			
+
+			request.getRequestDispatcher("cart_el.jsp").forward(request, response);
+			return;
+			/*
 			PrintWriter out = response.getWriter();
 			out.println("<html><body>");
 			out.println("h4>Selected books</h4>");
@@ -56,6 +60,7 @@ public class ShoppingCartServlet extends HttpServlet {
             out.println("</body></html>");
             
             session.invalidate();
+            */
 		}
 				
 	}

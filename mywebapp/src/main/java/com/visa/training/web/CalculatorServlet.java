@@ -35,9 +35,14 @@ public class CalculatorServlet extends HttpServlet {
 		break;
 		}
 		
-		PrintWriter out = response.getWriter();
+		/*PrintWriter out = response.getWriter();
 		out.println(n1+" "+s3+" "+n2+" = "+ans);
 		out.flush();
+		*/
+		//To forward ans to JSP
+		request.setAttribute("result", ans);
+		//request.getRequestDispatcher("Calcresult.jsp").forward(request, response);
+		request.getRequestDispatcher("calresult_el.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
