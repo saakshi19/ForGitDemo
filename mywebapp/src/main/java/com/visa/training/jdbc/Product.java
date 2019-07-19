@@ -11,7 +11,7 @@ public class Product {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Product(int id, String name, float price, int qoh) {
+	public Product(String name, float price, int qoh) {
 		super();
 		this.id = id;
 		this.name = name;

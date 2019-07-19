@@ -30,7 +30,7 @@ public class ProductWeb extends HttpServlet {
 		float price = Float.parseFloat(s3);
 		int qoh = Integer.parseInt(s4);
 		ProductDAO dao = new ProductDAO();
-		Product prod = new Product(id,s2,price,qoh);
+		Product prod = new Product(s2,price,qoh);
 		
 		try {
 			generatedId = dao.save(prod);
