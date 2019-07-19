@@ -1,5 +1,7 @@
 package com.visa.training.jpa.app;
 
+import java.util.List;
+
 import com.visa.training.jpa.dal.JpaProductDAO;
 import com.visa.training.jpa.domain.Product;
 
@@ -13,10 +15,11 @@ public class ProductJpaApp {
 			//dao.removeById(41);
 			//System.out.println(dao.findById(41));
 			//dao is receiving detatched object
-			Product test1 = new Product("Hibernate1",10000,10);
-			dao.update(45, test1);
-			System.out.println(dao.findById(45));
-			
+			//Product test1 = new Product("Hibernate1",10000,10);
+			//dao.update(45, test1);
+			//System.out.println(dao.findById(45));
+			List<Product> all = dao.findAll();
+			all.forEach(System.out::println);
 			
 			
 			System.exit(0);
