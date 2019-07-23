@@ -32,12 +32,7 @@ public class ProductWeb extends HttpServlet {
 		ProductDAO dao = new ProductDAO();
 		Product prod = new Product(s2,price,qoh);
 		
-		try {
-			generatedId = dao.save(prod);
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		generatedId = dao.save(prod);
 		
 		PrintWriter out = response.getWriter();
 		out.println("Submitted  with id "+generatedId);
